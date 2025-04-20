@@ -14,10 +14,10 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
 import ContactsRoundedIcon from "@mui/icons-material/ContactsRounded";
 import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
-import WorkHistoryRoundedIcon from '@mui/icons-material/WorkHistoryRounded';
-import CollectionsRoundedIcon from '@mui/icons-material/CollectionsRounded';
-import CampaignRoundedIcon from '@mui/icons-material/CampaignRounded';
-import Diversity3RoundedIcon from '@mui/icons-material/Diversity3Rounded';
+import WorkHistoryRoundedIcon from "@mui/icons-material/WorkHistoryRounded";
+import CollectionsRoundedIcon from "@mui/icons-material/CollectionsRounded";
+import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
+import Diversity3RoundedIcon from "@mui/icons-material/Diversity3Rounded";
 
 const Logo = styled("img", {
   shouldForwardProp: (prop) => prop !== "theme" && prop !== "ownerstate",
@@ -157,6 +157,12 @@ export default function DashboardLayoutBasic(props) {
       window={demoWindow}
     >
       <DashboardLayout
+      hidePageTitle
+      sx={{
+        '& .MuiTypography-h4': {
+          display: 'none !important',
+        },
+      }}
         branding={{
           logo: (
             <Box
@@ -199,7 +205,9 @@ export default function DashboardLayoutBasic(props) {
           {router.pathname === "/dashboard" && (
             <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Hero Section</h2>
-              <p>Welcome to the Hero section! Customize this however you like.</p>
+              <p>
+                Welcome to the Hero section! Customize this however you like.
+              </p>
             </Box>
           )}
 
@@ -210,13 +218,12 @@ export default function DashboardLayoutBasic(props) {
             </Box>
           )}
 
-{router.pathname === "/projects" && (
+          {router.pathname === "/projects" && (
             <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Projects Section</h2>
               <p>This is a custom div for the Projects page.</p>
             </Box>
           )}
-
 
           {router.pathname === "/donate" && (
             <Box sx={{ p: 3, borderRadius: 2 }}>
