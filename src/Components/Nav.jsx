@@ -197,21 +197,21 @@ export default function DashboardLayoutBasic(props) {
       >
         <PageContainer ownerstate={"dashboardLayout"}>
           {router.pathname === "/dashboard" && (
-            <Box sx={{ p: 3, backgroundColor: "#ede7f6", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Hero Section</h2>
               <p>Welcome to the Hero section! Customize this however you like.</p>
             </Box>
           )}
 
           {router.pathname === "/about" && (
-            <Box sx={{ p: 3, backgroundColor: "#e3f2fd", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>About Section</h2>
               <p>This is a custom div for the About page.</p>
             </Box>
           )}
 
 {router.pathname === "/projects" && (
-            <Box sx={{ p: 3, backgroundColor: "#e3f2fd", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Projects Section</h2>
               <p>This is a custom div for the Projects page.</p>
             </Box>
@@ -219,35 +219,35 @@ export default function DashboardLayoutBasic(props) {
 
 
           {router.pathname === "/donate" && (
-            <Box sx={{ p: 3, backgroundColor: "#fce4ec", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Donations Section</h2>
               <p>This is a custom div for the Donations page.</p>
             </Box>
           )}
 
           {router.pathname === "/photogallery" && (
-            <Box sx={{ p: 3, backgroundColor: "#e8f5e9", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Photo gallery Section</h2>
               <p>This is a Photo gallery page.</p>
             </Box>
           )}
 
           {router.pathname === "/campaigns" && (
-            <Box sx={{ p: 3, backgroundColor: "#f3e5f5", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>campaigns Section</h2>
               <p>This is a custom div for the campaigns page.</p>
             </Box>
           )}
 
           {router.pathname === "/memberinfo/volunteers" && (
-            <Box sx={{ p: 3, backgroundColor: "#fffde7", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Volunteers info</h2>
               <p>This is a custom div for the Volunteers info page.</p>
             </Box>
           )}
 
           {router.pathname === "/memberinfo/donors" && (
-            <Box sx={{ p: 3, backgroundColor: "#e1f5fe", borderRadius: 2 }}>
+            <Box sx={{ p: 3, borderRadius: 2 }}>
               <h2>Donor List info</h2>
               <p>This is a custom div for the Donor List info page.</p>
             </Box>
