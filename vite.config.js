@@ -9,5 +9,10 @@ export default defineConfig({
     alias: {
       '@mui/styled-engine': path.resolve(__dirname, 'node_modules/@mui/styled-engine-sc')
     }
+  },
+  build: {
+    rollupOptions: {
+      external: ['@toolpad/core/AppProvider']
+    }
   }
 })
