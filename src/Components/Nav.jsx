@@ -10,15 +10,16 @@ import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-// import HomeIcon from '@mui/icons-material/Home';
-import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
-import VolunteerActivismRoundedIcon from '@mui/icons-material/VolunteerActivismRounded';
-import ContactsRoundedIcon from '@mui/icons-material/ContactsRounded';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
+import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
+import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
+import ContactsRoundedIcon from "@mui/icons-material/ContactsRounded";
+import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
 
-const Logo = styled("img")(({ theme }) => ({
+const Logo = styled("img", {
+  shouldForwardProp: (prop) => prop !== "theme" && prop !== "ownerstate",
+})(({ theme }) => ({
   width: "auto",
-  height: "60px", // Adjust height based on your needs
+  height: "60px",
   objectFit: "contain",
   display: "block",
   margin: "auto",
@@ -32,6 +33,15 @@ const Logo = styled("img")(({ theme }) => ({
   [theme.breakpoints.down("xs")]: {
     height: "30px",
   },
+}));
+
+const Skeleton = styled("div", {
+  shouldForwardProp: (prop) => prop !== "height" && prop !== "ownerstate",
+})(({ theme, height }) => ({
+  backgroundColor: theme.palette.action.hover,
+  borderRadius: theme.shape.borderRadius,
+  height,
+  content: '" "',
 }));
 
 const NAVIGATION = [
@@ -79,6 +89,16 @@ const NAVIGATION = [
     ],
   },
   {
+    segment: "orders",
+    title: "Orders",
+    icon: <ShoppingCartIcon />,
+  },
+  {
+    segment: "integrations",
+    title: "Integrations",
+    icon: <LayersIcon />,
+  },
+  {
     segment: "contact",
     title: "Contact Us",
     icon: <ContactsRoundedIcon />,
@@ -115,19 +135,9 @@ function useDemoRouter(initialPath) {
   return router;
 }
 
-const Skeleton = styled("div")(({ theme, height }) => ({
-  backgroundColor: theme.palette.action.hover,
-  borderRadius: theme.shape.borderRadius,
-  height,
-  content: '" "',
-}));
-
 export default function DashboardLayoutBasic(props) {
   const { window } = props;
-
   const router = useDemoRouter("/dashboard");
-
-  // Remove this const when copying and pasting into your project.
   const demoWindow = window ? window() : undefined;
 
   return (
@@ -176,67 +186,76 @@ export default function DashboardLayoutBasic(props) {
           ),
         }}
       >
-        <PageContainer>
-  {router.pathname === "/dashboard" && (
-    <Box sx={{ p: 3, backgroundColor: "#ede7f6", borderRadius: 2 }}>
-      <h2>Hero Section</h2>
-      <p>Welcome to the Hero section! Customize this however you like.</p>
-    </Box>
-  )}
-{router.pathname === "/about" && (
-    <Box sx={{ p: 3, backgroundColor: "#e3f2fd", borderRadius: 2 }}>
-      <h2>About Section</h2>
-      <p>This is a custom div for the About page.</p>
-    </Box>
-  )}
-  {router.pathname === "/donate" && (
-    <Box sx={{ p: 3, backgroundColor: "#e3f2fd", borderRadius: 2 }}>
-      <h2>Donations Section</h2>
-      <p>This is a custom div for the Donations page.</p>
-    </Box>
-  )}
+        <PageContainer ownerstate={"dashboardLayout"}>
+          {router.pathname === "/dashboard" && (
+            <Box sx={{ p: 3, backgroundColor: "#ede7f6", borderRadius: 2 }}>
+              <h2>Hero Section</h2>
+              <p>Welcome to the Hero section! Customize this however you like.</p>
+            </Box>
+          )}
 
-  {router.pathname === "/integrations" && (
-    <Box sx={{ p: 3, backgroundColor: "#f3e5f5", borderRadius: 2 }}>
-      <h2>Integrations Section</h2>
-      <p>This is a custom div for the Integrations page.</p>
-    </Box>
-  )}
+          {router.pathname === "/about" && (
+            <Box sx={{ p: 3, backgroundColor: "#e3f2fd", borderRadius: 2 }}>
+              <h2>About Section</h2>
+              <p>This is a custom div for the About page.</p>
+            </Box>
+          )}
 
-  {router.pathname === "/reports/sales" && (
-    <Box sx={{ p: 3, backgroundColor: "#e8f5e9", borderRadius: 2 }}>
-      <h2>Sales Report</h2>
-      <p>This is a custom div for the Sales Report page.</p>
-    </Box>
-  )}
+          {router.pathname === "/donate" && (
+            <Box sx={{ p: 3, backgroundColor: "#fce4ec", borderRadius: 2 }}>
+              <h2>Donations Section</h2>
+              <p>This is a custom div for the Donations page.</p>
+            </Box>
+          )}
 
-  {router.pathname === "/reports/traffic" && (
-    <Box sx={{ p: 3, backgroundColor: "#fff3e0", borderRadius: 2 }}>
-      <h2>Traffic Report</h2>
-      <p>This is a custom div for the Traffic Report page.</p>
-    </Box>
-  )}
+          {router.pathname === "/orders" && (
+            <Box sx={{ p: 3, backgroundColor: "#e8f5e9", borderRadius: 2 }}>
+              <h2>Orders Section</h2>
+              <p>This is a custom div for the Orders page.</p>
+            </Box>
+          )}
 
-  {/* Default fallback for unmatched routes */}
-  {![
-    "/dashboard",
-    "/about",
-    "/donate",
-    "/integrations",
-    "/reports/sales",
-    "/reports/traffic",
-  ].includes(router.pathname) && (
-    <Grid container spacing={1}>
-      <Grid item xs={12}>
-        <Skeleton height={14} />
-      </Grid>
-      <Grid item xs={12}>
-        <Skeleton height={100} />
-      </Grid>
-    </Grid>
-  )}
-</PageContainer>
+          {router.pathname === "/integrations" && (
+            <Box sx={{ p: 3, backgroundColor: "#f3e5f5", borderRadius: 2 }}>
+              <h2>Integrations Section</h2>
+              <p>This is a custom div for the Integrations page.</p>
+            </Box>
+          )}
 
+          {router.pathname === "/reports/sales" && (
+            <Box sx={{ p: 3, backgroundColor: "#fffde7", borderRadius: 2 }}>
+              <h2>Sales Report</h2>
+              <p>This is a custom div for the Sales Report page.</p>
+            </Box>
+          )}
+
+          {router.pathname === "/reports/traffic" && (
+            <Box sx={{ p: 3, backgroundColor: "#e1f5fe", borderRadius: 2 }}>
+              <h2>Traffic Report</h2>
+              <p>This is a custom div for the Traffic Report page.</p>
+            </Box>
+          )}
+
+          {/* Fallback skeleton for unmatched paths */}
+          {![
+            "/dashboard",
+            "/about",
+            "/donate",
+            "/orders",
+            "/integrations",
+            "/reports/sales",
+            "/reports/traffic",
+          ].includes(router.pathname) && (
+            <Grid container spacing={1}>
+              <Grid item xs={12}>
+                <Skeleton height={14} />
+              </Grid>
+              <Grid item xs={12}>
+                <Skeleton height={100} />
+              </Grid>
+            </Grid>
+          )}
+        </PageContainer>
       </DashboardLayout>
     </AppProvider>
   );
