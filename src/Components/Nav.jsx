@@ -14,6 +14,10 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import VolunteerActivismRoundedIcon from "@mui/icons-material/VolunteerActivismRounded";
 import ContactsRoundedIcon from "@mui/icons-material/ContactsRounded";
 import InfoRoundedIcon from "@mui/icons-material/InfoRounded";
+import WorkHistoryRoundedIcon from '@mui/icons-material/WorkHistoryRounded';
+import CollectionsRoundedIcon from '@mui/icons-material/CollectionsRounded';
+import CampaignRoundedIcon from '@mui/icons-material/CampaignRounded';
+import Diversity3RoundedIcon from '@mui/icons-material/Diversity3Rounded';
 
 const Logo = styled("img", {
   shouldForwardProp: (prop) => prop !== "theme" && prop !== "ownerstate",
@@ -60,6 +64,11 @@ const NAVIGATION = [
     icon: <InfoRoundedIcon />,
   },
   {
+    segment: "projects",
+    title: "Projects",
+    icon: <WorkHistoryRoundedIcon />,
+  },
+  {
     segment: "donate",
     title: "Donate",
     icon: <VolunteerActivismRoundedIcon />,
@@ -69,34 +78,34 @@ const NAVIGATION = [
   },
   {
     kind: "header",
-    title: "Analytics",
+    title: "Media & Support",
   },
   {
-    segment: "reports",
-    title: "Reports",
-    icon: <BarChartIcon />,
+    segment: "memberinfo",
+    title: "Members Information",
+    icon: <Diversity3RoundedIcon />,
     children: [
       {
-        segment: "sales",
-        title: "Sales",
+        segment: "volunteers",
+        title: "Our People",
         icon: <DescriptionIcon />,
       },
       {
-        segment: "traffic",
-        title: "Traffic",
+        segment: "donors",
+        title: "Donor List",
         icon: <DescriptionIcon />,
       },
     ],
   },
   {
-    segment: "orders",
-    title: "Orders",
-    icon: <ShoppingCartIcon />,
+    segment: "photogallery",
+    title: "Photo Gallery",
+    icon: <CollectionsRoundedIcon />,
   },
   {
-    segment: "integrations",
-    title: "Integrations",
-    icon: <LayersIcon />,
+    segment: "campaigns",
+    title: "Campaigns",
+    icon: <CampaignRoundedIcon />,
   },
   {
     segment: "contact",
@@ -201,6 +210,14 @@ export default function DashboardLayoutBasic(props) {
             </Box>
           )}
 
+{router.pathname === "/projects" && (
+            <Box sx={{ p: 3, backgroundColor: "#e3f2fd", borderRadius: 2 }}>
+              <h2>Projects Section</h2>
+              <p>This is a custom div for the Projects page.</p>
+            </Box>
+          )}
+
+
           {router.pathname === "/donate" && (
             <Box sx={{ p: 3, backgroundColor: "#fce4ec", borderRadius: 2 }}>
               <h2>Donations Section</h2>
@@ -208,31 +225,31 @@ export default function DashboardLayoutBasic(props) {
             </Box>
           )}
 
-          {router.pathname === "/orders" && (
+          {router.pathname === "/photogallery" && (
             <Box sx={{ p: 3, backgroundColor: "#e8f5e9", borderRadius: 2 }}>
-              <h2>Orders Section</h2>
-              <p>This is a custom div for the Orders page.</p>
+              <h2>Photo gallery Section</h2>
+              <p>This is a Photo gallery page.</p>
             </Box>
           )}
 
-          {router.pathname === "/integrations" && (
+          {router.pathname === "/campaigns" && (
             <Box sx={{ p: 3, backgroundColor: "#f3e5f5", borderRadius: 2 }}>
-              <h2>Integrations Section</h2>
-              <p>This is a custom div for the Integrations page.</p>
+              <h2>campaigns Section</h2>
+              <p>This is a custom div for the campaigns page.</p>
             </Box>
           )}
 
-          {router.pathname === "/reports/sales" && (
+          {router.pathname === "/memberinfo/volunteers" && (
             <Box sx={{ p: 3, backgroundColor: "#fffde7", borderRadius: 2 }}>
-              <h2>Sales Report</h2>
-              <p>This is a custom div for the Sales Report page.</p>
+              <h2>Volunteers info</h2>
+              <p>This is a custom div for the Volunteers info page.</p>
             </Box>
           )}
 
-          {router.pathname === "/reports/traffic" && (
+          {router.pathname === "/memberinfo/donors" && (
             <Box sx={{ p: 3, backgroundColor: "#e1f5fe", borderRadius: 2 }}>
-              <h2>Traffic Report</h2>
-              <p>This is a custom div for the Traffic Report page.</p>
+              <h2>Donor List info</h2>
+              <p>This is a custom div for the Donor List info page.</p>
             </Box>
           )}
 
@@ -240,11 +257,12 @@ export default function DashboardLayoutBasic(props) {
           {![
             "/dashboard",
             "/about",
+            "/projects",
             "/donate",
-            "/orders",
-            "/integrations",
-            "/reports/sales",
-            "/reports/traffic",
+            "/photogallery",
+            "/campaigns",
+            "/memberinfo/volunteers",
+            "/memberinfo/donors",
           ].includes(router.pathname) && (
             <Grid container spacing={1}>
               <Grid item xs={12}>
