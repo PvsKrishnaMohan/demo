@@ -162,6 +162,12 @@ export default function DashboardLayoutBasic(props) {
         '& .MuiTypography-h4': {
           display: 'none !important',
         },
+        '& .MuiBreadcrumbs-ol': {
+          display: 'none !important',
+        },
+        '& .MuiStack-root-esgFfo wmha-d MuiStack-root' : {
+          display: 'none !important',
+        },       
       }}
         branding={{
           logo: (
@@ -171,7 +177,7 @@ export default function DashboardLayoutBasic(props) {
                 justifyContent: "center",
                 alignItems: "center",
                 py: 2,
-              }}
+              }} 
             >
               <Logo
                 src="https://res.cloudinary.com/krishnamohan479/image/upload/v1661537569/ms4-modified_ku28n9.png"
@@ -203,7 +209,7 @@ export default function DashboardLayoutBasic(props) {
       >
         <PageContainer ownerstate={"dashboardLayout"}>
           {router.pathname === "/dashboard" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box sx={{ p: 1, borderRadius: 2 }}>
               <h2>Hero Section</h2>
               <p>
                 Welcome to the Hero section! Customize this however you like.
