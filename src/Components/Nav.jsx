@@ -1,10 +1,6 @@
 import * as React from "react";
 import { createTheme, styled } from "@mui/material/styles";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import BarChartIcon from "@mui/icons-material/BarChart";
 import DescriptionIcon from "@mui/icons-material/Description";
-import LayersIcon from "@mui/icons-material/Layers";
 import { AppProvider } from "@toolpad/core/AppProvider";
 import { DashboardLayout } from "@toolpad/core/DashboardLayout";
 import { PageContainer } from "@toolpad/core/PageContainer";
@@ -18,6 +14,8 @@ import WorkHistoryRoundedIcon from "@mui/icons-material/WorkHistoryRounded";
 import CollectionsRoundedIcon from "@mui/icons-material/CollectionsRounded";
 import CampaignRoundedIcon from "@mui/icons-material/CampaignRounded";
 import Diversity3RoundedIcon from "@mui/icons-material/Diversity3Rounded";
+import Globe from "./HeroGlobe/Globe";
+import TileHero from "./HeroGlobe/HeroTile/TileHero";
 
 const Logo = styled("img", {
   shouldForwardProp: (prop) => prop !== "theme" && prop !== "ownerstate",
@@ -211,13 +209,13 @@ export default function DashboardLayoutBasic(props) {
           {router.pathname === "/dashboard" && (
             <Box
               sx={{
-                p: 1,
+                p: 0,
                 borderRadius: 2,
-                border: "1px solid black",
                 textAlign: "center",
                 margin: "-10px",
               }}
             >
+              <Globe/>
               <h2>Hero Section</h2>
               <p>
                 Welcome to the Hero section! Customize this however you like.
