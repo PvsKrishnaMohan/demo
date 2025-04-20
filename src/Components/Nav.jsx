@@ -157,18 +157,18 @@ export default function DashboardLayoutBasic(props) {
       window={demoWindow}
     >
       <DashboardLayout
-      hidePageTitle
-      sx={{
-        '& .MuiTypography-h4': {
-          display: 'none !important',
-        },
-        '& .MuiBreadcrumbs-ol': {
-          display: 'none !important',
-        },
-        '& .MuiStack-root-esgFfo wmha-d MuiStack-root' : {
-          display: 'none !important',
-        },       
-      }}
+        hidePageTitle
+        sx={{
+          "& .MuiTypography-h4": {
+            display: "none !important",
+          },
+          "& .MuiBreadcrumbs-ol": {
+            display: "none !important",
+          },
+          "& .MuiStack-root-esgFfo wmha-d MuiStack-root": {
+            display: "none !important",
+          },
+        }}
         branding={{
           logo: (
             <Box
@@ -177,7 +177,7 @@ export default function DashboardLayoutBasic(props) {
                 justifyContent: "center",
                 alignItems: "center",
                 py: 2,
-              }} 
+              }}
             >
               <Logo
                 src="https://res.cloudinary.com/krishnamohan479/image/upload/v1661537569/ms4-modified_ku28n9.png"
@@ -209,7 +209,15 @@ export default function DashboardLayoutBasic(props) {
       >
         <PageContainer ownerstate={"dashboardLayout"}>
           {router.pathname === "/dashboard" && (
-            <Box sx={{ p: 1, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>Hero Section</h2>
               <p>
                 Welcome to the Hero section! Customize this however you like.
@@ -218,49 +226,105 @@ export default function DashboardLayoutBasic(props) {
           )}
 
           {router.pathname === "/about" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>About Section</h2>
               <p>This is a custom div for the About page.</p>
             </Box>
           )}
 
           {router.pathname === "/projects" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>Projects Section</h2>
               <p>This is a custom div for the Projects page.</p>
             </Box>
           )}
 
           {router.pathname === "/donate" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>Donations Section</h2>
               <p>This is a custom div for the Donations page.</p>
             </Box>
           )}
 
           {router.pathname === "/photogallery" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>Photo gallery Section</h2>
               <p>This is a Photo gallery page.</p>
             </Box>
           )}
 
           {router.pathname === "/campaigns" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>campaigns Section</h2>
               <p>This is a custom div for the campaigns page.</p>
             </Box>
           )}
 
           {router.pathname === "/memberinfo/volunteers" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>Volunteers info</h2>
               <p>This is a custom div for the Volunteers info page.</p>
             </Box>
           )}
 
           {router.pathname === "/memberinfo/donors" && (
-            <Box sx={{ p: 3, borderRadius: 2 }}>
+            <Box
+              sx={{
+                p: 1,
+                borderRadius: 2,
+                border: "1px solid black",
+                textAlign: "center",
+                margin: "-10px",
+              }}
+            >
               <h2>Donor List info</h2>
               <p>This is a custom div for the Donor List info page.</p>
             </Box>
