@@ -3,11 +3,13 @@ import { useState } from "react";
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import DashboardLayoutBasic from "./Components/Nav";
+import Carousel from "./Components/Carousel";
 
 function App() {
   return (
     <>
-      <DashboardLayoutBasic />
+      {/* <DashboardLayoutBasic /> */}
+      <Carousel/>
     </>
   );
 }
