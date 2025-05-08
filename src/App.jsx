@@ -8,8 +8,8 @@ import Carousel from "./Components/Carousel";
 function App() {
   return (
     <>
-      {/* <DashboardLayoutBasic /> */}
-      <Carousel/>
+      <DashboardLayoutBasic />
+      {/* <Carousel/> */}
     </>
   );
 }
